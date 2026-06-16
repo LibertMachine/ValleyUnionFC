@@ -15,53 +15,26 @@
       --ink: #1d1717;
       --white: #fffaf0;
     }
-.hero-statement {
-  position: relative;
-  margin: 30px 0;
-  padding: 30px;
-  border-left: 5px solid var(--gold);
-  background: rgba(255,255,255,.04);
-  border-radius: 0 20px 20px 0;
-  overflow: hidden;
+.supporters-banner {
+  margin: 40px 0;
+  line-height: 1;
 }
 
-.hero-statement h2 {
-  position: relative;
-  z-index: 2;
+.supporters-banner div:first-child {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
   color: var(--gold);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: 10px;
-  letter-spacing: -.03em;
+  margin-bottom: 20px;
+  letter-spacing: -0.04em;
 }
 
-.hero-statement p {
-  position: relative;
-  z-index: 2;
-  font-weight: 800;
+.supporters-banner div:not(:first-child) {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: var(--cream);
   text-transform: uppercase;
-  letter-spacing: .08em;
-  line-height: 1.8;
-}
-
-.bridge-silhouette {
-  position: absolute;
-  inset: 0;
-  opacity: .08;
-  z-index: 1;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 90px,
-      var(--gold) 90px 96px
-    );
-
-  clip-path: polygon(
-    0 55%,
-    100% 35%,
-    100% 42%,
-    0 62%
-  );
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
     * {
       box-sizing: border-box;
@@ -459,17 +432,7 @@
           <div class="eyebrow">Menasha • Fox Crossing • Fox Valley</div>
           <h1>Valley Union FC</h1>
           <div class="tagline">Be the Bridge.</div>
-          <div class="hero-statement">
-  <div class="bridge-silhouette"></div>
-
-  <h2>BE THE BRIDGE.</h2>
-
-  <p>
-    One Valley.<br>
-    One Club.<br>
-    One Standard.
-  </p>
-</div>
+          
           <p>
             Building a community soccer club for the Fox Valley rooted in character,
             development, effort, and belonging. We compete hard, develop honestly,
@@ -481,7 +444,12 @@
             <a class="btn secondary" href="#mission">Our Philosophy</a>
           </div>
         </div>
-
+<div class="supporters-banner">
+  <div>BE THE BRIDGE.</div>
+  <div>ONE VALLEY.</div>
+  <div>ONE CLUB.</div>
+  <div>ONE STANDARD.</div>
+</div>
         <div class="crest-card">
           <img src="VUFCLogo.png" alt="Valley Union FC crest">
           <template id="crestFallback">
