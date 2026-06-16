@@ -108,18 +108,25 @@
     nav a:hover {
       color: var(--gold);
     }
+.hero {
+  min-height: 88vh;
+  display: grid;
+  place-items: center;
+  padding: 72px 22px;
+  position: relative;
+  overflow: hidden;
 
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      place-items: center;
-      padding: 72px 22px;
-      background:
-        linear-gradient(rgba(43, 13, 19, 0.84), rgba(43, 13, 19, 0.94)),
-        radial-gradient(circle at 20% 20%, rgba(196, 154, 74, 0.25), transparent 35%),
-        radial-gradient(circle at 80% 40%, rgba(67, 127, 157, 0.22), transparent 35%);
-    }
+  background:
+    linear-gradient(
+      rgba(43, 13, 19, 0.62),
+      rgba(43, 13, 19, 0.86)
+    ),
+    url("hero-bridge-bg.png");
 
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
     .hero-grid {
       max-width: 1180px;
       display: grid;
