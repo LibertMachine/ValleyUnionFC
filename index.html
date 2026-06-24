@@ -21,19 +21,17 @@
   margin: 0;
   line-height: 1;
 }
-
 .supporters-banner::before {
   content: "";
   position: absolute;
   inset: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
+  width: 430px;
+  height: 430px;
   background: url("VUFCLogoCrest.png") center/contain no-repeat;
-  opacity: 0.08;
+  opacity: 0.12;
   pointer-events: none;
 }
-
 .supporters-banner div {
   position: relative;
   z-index: 1;
@@ -46,7 +44,6 @@
   margin-bottom: 20px;
   letter-spacing: -0.04em;
 }
-
 .supporters-banner div:not(:first-child) {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 900;
@@ -55,6 +52,7 @@
   letter-spacing: 0.08em;
   margin-bottom: 10px;
 }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -134,25 +132,23 @@
   padding: 72px 22px;
   position: relative;
   overflow: hidden;
-
   background:
-    linear-gradient(
-      rgba(43, 13, 19, 0.62),
-      rgba(43, 13, 19, 0.86)
-    ),
+    linear-gradient(rgba(43, 13, 19, 0.62), rgba(43, 13, 19, 0.86)),
     url("hero-bridge-bg.png");
-
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
 }
-    .hero-grid {
-      max-width: 1180px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
+  .hero-grid {
+  width: 100%;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}  
 
     .eyebrow {
       color: var(--gold);
@@ -415,25 +411,29 @@
     }
 
     @media (max-width: 860px) {
-      .hero-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-      nav {
-        display: none;
-      }
+  h1 {
+    white-space: normal;
+  }
 
-      .cards,
-      .union-grid {
-        grid-template-columns: 1fr;
-      }
+  .hero p {
+    margin: 0 auto;
+  }
 
-      .crest-card {
-        max-width: 600px;
-      }
-    }
-  </style>
+  .buttons {
+    justify-content: center;
+  }
+
+  .supporters-banner::before {
+    width: 320px;
+    height: 320px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -452,32 +452,38 @@
     </div>
   </header>
   <main id="top">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Menasha • Fox Crossing • Fox Valley</div>
-          <h1>Valley Union FC</h1>
-          <div class="tagline">Be the Bridge.</div>
-          
-          <p>
-            Building a community soccer club for the Fox Valley rooted in character,
-            development, effort, and belonging. We compete hard, develop honestly,
-            and show up every day to serve the players, families, and communities
-            that make this valley home.
-          </p>
-          <div class="buttons">
-            <a class="btn primary" href="#join">Become a Founding Family</a>
-            <a class="btn secondary" href="#mission">Our Philosophy</a>
-          </div>
-        </div>
-<div class="supporters-banner">
-  <div>BE THE BRIDGE.</div>
-  <div>ONE VALLEY.</div>
-  <div>ONE CLUB.</div>
-  <div>ONE STANDARD.</div>
-</div>
-      
-    </section>
+   <section class="hero">
+  <div class="hero-grid">
+
+    <div>
+      <div class="eyebrow">Menasha • Fox Crossing • Fox Valley</div>
+
+      <h1>Valley Union FC</h1>
+
+      <div class="tagline">Be the Bridge.</div>
+
+      <p>
+        Building a community soccer club for the Fox Valley rooted in character,
+        development, effort, and belonging. We compete hard, develop honestly,
+        and show up every day to serve the players, families, and communities
+        that make this valley home.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#join">Become a Founding Family</a>
+        <a class="btn secondary" href="#mission">Our Philosophy</a>
+      </div>
+    </div>
+
+    <div class="supporters-banner">
+      <div>BE THE BRIDGE.</div>
+      <div>ONE VALLEY.</div>
+      <div>ONE CLUB.</div>
+      <div>ONE STANDARD.</div>
+    </div>
+
+  </div>
+</section>
 
     <section id="mission" class="light">
       <div class="container">
