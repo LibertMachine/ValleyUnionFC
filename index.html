@@ -26,28 +26,30 @@
   position: absolute;
   inset: 50%;
   transform: translate(-50%, -50%);
-  width: 430px;
-  height: 430px;
+
+  width: 500px;
+  height: 500px;
+
   background: url("VUFCLogoCrest.png") center/contain no-repeat;
-  opacity: 0.12;
+
+  opacity: 0.22;
+
   pointer-events: none;
-}
-.supporters-banner div {
-  position: relative;
-  z-index: 1;
+
+  filter: drop-shadow(0 0 20px rgba(196,154,74,0.25));
 }
 
 .supporters-banner div:first-child {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  color: var(--gold);
+  color: rgba(196, 154, 74, 0.88);
   margin-bottom: 20px;
   letter-spacing: -0.04em;
 }
 .supporters-banner div:not(:first-child) {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 900;
-  color: var(--cream);
+  color: rgba(246, 234, 211, 0.88);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 10px;
