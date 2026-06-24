@@ -16,8 +16,27 @@
       --white: #fffaf0;
     }
 .supporters-banner {
-  margin: 40px 0;
+  position: relative;
+  text-align: center;
+  margin: 0;
   line-height: 1;
+}
+
+.supporters-banner::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: url("VUFCLogoCrest.png") center/contain no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.supporters-banner div {
+  position: relative;
+  z-index: 1;
 }
 
 .supporters-banner div:first-child {
