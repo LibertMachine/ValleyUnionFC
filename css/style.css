@@ -1,0 +1,453 @@
+:root {
+      --maroon: #4b1720;
+      --maroon-dark: #2b0d13;
+      --gold: #c49a4a;
+      --cream: #f6ead3;
+      --tan: #d6b777;
+      --river: #437f9d;
+      --ink: #1d1717;
+      --white: #fffaf0;
+    }
+.supporters-banner {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+ .supporters-banner div {
+  position: relative;
+  z-index: 1;
+}   
+.supporters-banner::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: clamp(300px, 45vw, 750px);
+    height: clamp(300px, 45vw, 750px);
+
+    background: url("../assets/images/VUFCLogoCrest.png") center/contain no-repeat;
+
+    opacity: 0.25;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    filter: drop-shadow(0 0 20px rgba(196,154,74,0.25));
+}
+
+.supporters-banner div:first-child {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: rgba(196, 154, 74, 0.8);
+  margin-bottom: 20px;
+  letter-spacing: -0.04em;
+}
+.supporters-banner div:not(:first-child) {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: rgba(246, 234, 211, 0.82);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--cream);
+      background: var(--maroon-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(43, 13, 19, 0.94);
+      border-bottom: 1px solid rgba(196, 154, 74, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+.hero {
+  min-height: calc(100vh - 71px);
+  display: grid;
+  place-items: center;
+  padding: 72px 22px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(43, 13, 19, 0.62), rgba(43, 13, 19, 0.86)),
+    url("hero-bridge-bg.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+  .hero-grid {
+  width: 100%;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}  
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-size: clamp(1.25rem, 3vw, 2.1rem);
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 660px;
+      font-size: 1.1rem;
+      color: rgba(246, 234, 211, 0.88);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      border: 2px solid var(--gold);
+    }
+
+    .btn.primary {
+      background: var(--gold);
+      color: var(--maroon-dark);
+    }
+
+    .btn.secondary {
+      color: var(--cream);
+    }
+
+    section {
+      padding: 86px 22px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-copy {
+      max-width: 760px;
+      color: rgba(246, 234, 211, 0.86);
+      font-size: 1.08rem;
+      margin-bottom: 34px;
+    }
+
+    .light {
+      background: var(--cream);
+      color: var(--maroon-dark);
+    }
+
+    .light .section-copy {
+      color: rgba(43, 13, 19, 0.78);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 250, 240, 0.08);
+      border: 1px solid rgba(196, 154, 74, 0.28);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .light .card {
+      background: #fff8e9;
+      border-color: rgba(75, 23, 32, 0.16);
+    }
+
+    .card h3 {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .light .card h3 {
+      color: var(--maroon);
+    }
+
+    .union-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .value {
+      background: var(--maroon);
+      color: var(--cream);
+      border-radius: 20px;
+      padding: 22px 16px;
+      min-height: 150px;
+      border: 1px solid rgba(196, 154, 74, 0.4);
+    }
+
+    .letter {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .value strong {
+      display: block;
+      margin: 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .quote {
+      background: var(--maroon);
+      color: var(--cream);
+      border-top: 6px solid var(--gold);
+      border-radius: 24px;
+      padding: 36px;
+      font-size: clamp(1.4rem, 4vw, 2.6rem);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .quote span {
+      color: var(--gold);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .promise-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .promise {
+      padding: 18px 20px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255, 250, 240, 0.08);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .form {
+      background: var(--cream);
+      color: var(--maroon-dark);
+      border-radius: 26px;
+      padding: 28px;
+    }
+
+    .form label {
+      font-weight: 800;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form input, .form select, .form textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(43, 13, 19, 0.22);
+      margin-bottom: 16px;
+      font: inherit;
+    }
+
+    .form button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 999px;
+      background: var(--maroon);
+      color: var(--cream);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 34px 22px;
+      border-top: 1px solid rgba(196, 154, 74, 0.3);
+      text-align: center;
+      color: rgba(246, 234, 211, 0.7);
+    }
+
+    @media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  h1 {
+    white-space: normal;
+  }
+
+  .hero p {
+    margin: 0 auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .supporters-banner::before {
+    width: 320px;
+    height: 320px;
+  }
+}
+    @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 18px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.78rem;
+  }
+
+  section {
+    padding: 64px 22px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .union-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .quote {
+    padding: 28px 22px;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+}
