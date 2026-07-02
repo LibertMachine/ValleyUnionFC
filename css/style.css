@@ -451,3 +451,23 @@
     font-size: 2.4rem;
   }
 }
+.form-note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(43, 13, 19, 0.65);
+    line-height: 1.5;
+}
+
+.form-note strong {
+    color: var(--maroon);
+}
+.form-note a {
+    color: var(--maroon);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-note a:hover {
+    text-decoration: underline;
+}
