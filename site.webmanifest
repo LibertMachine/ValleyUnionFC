@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Valley Union FC",
+  "short_name": "VUFC",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#e9ddc4",
-  "background_color": "#ffecc2",
+  "theme_color": "#4b1720",
+  "background_color": "#4b1720",
   "display": "standalone"
 }
