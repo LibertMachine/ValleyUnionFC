@@ -137,7 +137,7 @@
   overflow: hidden;
   background:
     linear-gradient(rgba(43, 13, 19, 0.62), rgba(43, 13, 19, 0.86)),
-    url("hero-bridge-bg.png");
+    url("/assets/Images/VUFCLogoCrest.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
