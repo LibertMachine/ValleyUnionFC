@@ -107,14 +107,10 @@
     }
 
     .brand-mark {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-size: 18px;
+      width: 90px;
+      height: 90px;
+      object-fit:contain;
+      display:block;
     }
 
     nav {
