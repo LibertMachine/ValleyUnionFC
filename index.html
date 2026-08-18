@@ -14,20 +14,31 @@
 </head>
 <body>
   <header>
-    <div class="nav">
-      <a class="brand" href="#top">
-        <img src="assets/Images/VUFCLogoCrest.png" alt="Valley Union FC Logo" class="brand-mark">
-        <span>Valley Union FC</span>
-      </a>
-      <nav>
-        <a href="#mission">Mission</a>
-        <a href="#union">The Union Way</a>
-        <a href="#promise">Promise</a>
-        <a href="#join">Join</a>
-      </nav>
-    </div>
-  </header>
-  <main id="top">
+  <div class="nav">
+
+    <a class="brand" href="#top">
+      <img
+        src="assets/Images/VUFCLogoCrest.png"
+        alt="Valley Union FC Logo"
+        class="brand-mark"
+      >
+
+      <span class="brand-name">Valley Union FC</span>
+
+      <span class="brand-tagline">Be The Bridge</span>
+    </a>
+
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#union">The Union Way</a>
+      <a href="#promise">Promise</a>
+      <a href="#join">Join</a>
+    </nav>
+
+  </div>
+</header>
+  
+<main id="top">
    <section class="hero">
   <div class="hero-grid">
 
@@ -120,12 +131,14 @@
     <section id="promise" class="light">
       <div class="container two-col">
         <div>
-          <h2 class="section-title">No empty promises.</h2>
+          <h2 class="section-title">What We Promise</h2>
           <p class="section-copy">
-            We will not promise scholarships, championships, or shortcuts.
-            We will promise honesty, effort, accountability, and a positive
-            environment where players can learn to love the game.
-          </p>
+           Valley Union FC is built on consistency and built to compete. 
+           We expect effort, accountability, 
+           and a commitment to getting better. 
+           But success is bigger than the scoreboard; 
+           we’re building players, teammates, 
+           and a club our community can be proud of.
         </div>
 
         <div class="promise-list">
@@ -163,26 +176,59 @@
           </div>
         </div>
 
-        <form class="form" action="mailto:info@valleyunionfc.com" method="post" enctype="text/plain">
-          <label for="name">Your Name</label>
-<input id="name" name="name" type="text" placeholder="Your name" required>
+        <form
+  class="form"
+  id="foundingForm"
+  action="https://formspree.io/f/xbgrpake"
+  method="POST"
+>
 
-<label for="email">Email</label>
-<input id="email" name="email" type="email" placeholder="you@example.com" required>
+  <input
+    type="hidden"
+    name="_subject"
+    value="New Valley Union Founding List Submission"
+  >
 
-<label for="role">I am a...</label>
-<select id="role" name="role" required>
-            <option>Parent / Guardian</option>
-            <option>Coach</option>
-            <option>Player</option>
-            <option>Volunteer</option>
-            <option>Sponsor / Community Partner</option>
-          </select>
+  <label for="name">Your Name</label>
+  <input
+    id="name"
+    name="name"
+    type="text"
+    placeholder="Your name"
+    required
+  >
 
-          <label for="message">What would you love to see?</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us what is missing in Fox Valley soccer."></textarea>
+  <label for="email">Email</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    placeholder="you@example.com"
+    required
+  >
 
-          <button type="submit">Join the Founding List</button>
+  <label for="role">I am a...</label>
+  <select id="role" name="role" required>
+    <option value="Parent / Guardian">Parent / Guardian</option>
+    <option value="Coach">Coach</option>
+    <option value="Player">Player</option>
+    <option value="Volunteer">Volunteer</option>
+    <option value="Sponsor / Community Partner">
+      Sponsor / Community Partner
+    </option>
+  </select>
+
+  <label for="message">What would you love to see?</label>
+<textarea
+  id="message"
+  name="message"
+  rows="5"
+  placeholder="Tell us what is missing in Fox Valley soccer."
+></textarea>
+
+<button type="submit" id="submitButton">
+  Join the Founding List
+</button>
 
 <p class="form-note">
   Questions? Email us directly at
@@ -192,7 +238,23 @@
 </p>
 
 </form>
-        </form>
+
+<div class="form-success" id="formSuccess" hidden>
+  <div class="form-success-mark">VUFC</div>
+
+  <h3>Welcome to the Union.</h3>
+
+  <p>
+    Thanks for reaching out to Valley Union FC.
+    We've received your information and will be in touch
+    as we continue building our inaugural teams and programs.
+  </p>
+
+  <p class="form-success-small">
+    We're glad you're here from the beginning. "Be The Bridge"
+  </p>
+</div>
+        
       </div>
     </section>
   </main>
@@ -200,5 +262,66 @@
   <footer>
     Valley Union FC • Be the Bridge • Built in the Fox Valley
   </footer>
+
+<script>
+  const foundingForm = document.getElementById("foundingForm");
+  const formSuccess = document.getElementById("formSuccess");
+  const submitButton = document.getElementById("submitButton");
+
+  foundingForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Show that something is happening
+    submitButton.disabled = true;
+    submitButton.textContent = "Joining...";
+
+    const formData = new FormData(foundingForm);
+
+    try {
+      const response = await fetch(foundingForm.action, {
+        method: foundingForm.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        // Hide the form
+        foundingForm.hidden = true;
+
+        // Show Valley Union confirmation
+        formSuccess.hidden = false;
+
+        // Smoothly bring confirmation into view
+        formSuccess.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        // Clear submitted information
+        foundingForm.reset();
+
+      } else {
+        submitButton.disabled = false;
+        submitButton.textContent = "Join the Founding List";
+
+        alert(
+          "Something went wrong. Please try again or email info@valleyunionfc.com."
+        );
+      }
+
+    } catch (error) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Join the Founding List";
+
+      alert(
+        "Something went wrong. Please try again or email info@valleyunionfc.com."
+      );
+    }
+  });
+</script>
+
 </body>
 </html>

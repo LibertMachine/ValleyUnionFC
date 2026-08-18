@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
 :root {
       --maroon: #4b1720;
       --maroon-dark: #2b0d13;
@@ -67,74 +68,145 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--cream);
-      background: var(--maroon-dark);
-      line-height: 1.6;
-    }
+  font-family: "Oswald", Arial, sans-serif;
+  color: var(--cream);
+  background: var(--maroon-dark);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2rem;
+  letter-spacing: 0.015em;
+  line-height: 1.7;
+}
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(43, 13, 19, 0.94);
-      border-bottom: 1px solid rgba(196, 154, 74, 0.35);
-      backdrop-filter: blur(8px);
-    }
+   header {
+  position: relative;
+  z-index: 10;
+  background: rgba(43, 13, 19, 0.94);
+  border-bottom: 1px solid rgba(196, 154, 74, 0.35);
+  backdrop-filter: blur(8px);
+}
 
-    .nav {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+/* HEADER LAYOUT */
+.nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 22px 20px;
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    .brand-mark {
-      width: 120px;
-      height: 120px;
-      object-fit:contain;
-      display:block;
-    }
+  gap: 8px;
+  text-align: center;
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+/* CREST + CLUB NAME */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    nav a:hover {
-      color: var(--gold);
-    }
+  gap: 2px;
+
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  color: var(--cream);
+}
+
+.brand-tagline {
+  margin-top: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  color: var(--gold);
+}
+
+/* HEADER NAVIGATION */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 34px;
+  margin-top: 6px;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+nav a {
+  position: relative;
+  padding: 7px 0;
+
+  color: var(--cream);
+
+  transition:
+    color 0.25s ease;
+}
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--gold);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.25s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}    
+
 .hero {
-  min-height: calc(100vh - 71px);
+  min-height: calc(100vh - 220px);
   display: grid;
   place-items: center;
-  padding: 72px 22px;
+  padding: 40px 22px 64px;
   position: relative;
   overflow: hidden;
   background:
     linear-gradient(rgba(43, 13, 19, 0.62), rgba(43, 13, 19, 0.86));
-
 }
+
   .hero-grid {
   width: 100%;
   max-width: 1180px;
@@ -218,15 +290,18 @@
       text-transform: uppercase;
       margin-bottom: 18px;
       letter-spacing: -0.04em;
+      text-align: center;
     }
 
     .section-copy {
-      max-width: 760px;
-      color: rgba(246, 234, 211, 0.86);
-      font-size: 1.08rem;
-      margin-bottom: 34px;
-    }
+  max-width: 760px;
+  color: rgba(246, 234, 211, 0.86);
+  font-size: 1.15rem;
+  line-height: 1.7;
 
+  margin: 0 auto 34px;
+  text-align: center;
+}
     .light {
       background: var(--cream);
       color: var(--maroon-dark);
@@ -325,11 +400,18 @@
     }
 
     .promise {
-      padding: 18px 20px;
-      border-left: 5px solid var(--gold);
-      background: rgba(255, 250, 240, 0.08);
-      border-radius: 0 16px 16px 0;
+     padding: 18px 20px;
+     border-left: 5px solid var(--gold);
+     background: rgba(255, 250, 240, 0.08);
+     border-radius: 0 16px 16px 0;
+     font-size: 1.2rem;
+     line-height: 1.6;
     }
+
+    .promise strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
 
     .form {
       background: var(--cream);
@@ -403,18 +485,30 @@
   }
 
   .nav {
-    flex-direction: column;
-    gap: 14px;
-    padding: 14px 18px;
-  }
+  padding: 14px 18px;
+  gap: 8px;
+}
 
-  nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    font-size: 0.78rem;
-  }
+.brand-mark {
+  width: 90px;
+  height: 90px;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+}
+
+nav {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 0.78rem;
+}
 
   section {
     padding: 64px 22px;
@@ -463,9 +557,4 @@
 
 .form-note a:hover {
     text-decoration: underline;
-}
-.brand-logo {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
 }
