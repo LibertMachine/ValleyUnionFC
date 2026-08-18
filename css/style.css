@@ -571,3 +571,145 @@ nav {
 .form-note a:hover {
     text-decoration: underline;
 }
+
+/* ==============================
+   FOUNDING 100
+   ============================== */
+
+.founding-hero {
+  min-height: 650px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 80px 22px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(75, 23, 32, 0.9),
+      var(--maroon-dark) 70%
+    );
+}
+
+.founding-hero-content {
+  max-width: 850px;
+}
+
+.founding-title {
+  white-space: normal;
+  margin-bottom: 24px;
+}
+
+.founding-lead {
+  max-width: 720px;
+  margin: 0 auto 32px;
+
+  font-size: 1.35rem;
+  line-height: 1.7;
+
+  color: rgba(246, 234, 211, 0.9);
+}
+
+.founding-count {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  margin: 18px 0 0;
+
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.founding-number {
+  font-size: clamp(5rem, 12vw, 9rem);
+  color: var(--gold);
+}
+
+.founding-divider {
+  margin: 0 10px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: rgba(246, 234, 211, 0.4);
+}
+
+.founding-total {
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--cream);
+}
+
+.founding-count-label {
+  margin-bottom: 32px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
+  color: rgba(246, 234, 211, 0.7);
+}
+
+.founding-form-container {
+  max-width: 800px;
+}
+
+.founding-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-success {
+  max-width: 700px;
+  margin: 0 auto;
+
+  padding: 48px 32px;
+
+  text-align: center;
+
+  background: var(--cream);
+
+  border: 2px solid var(--gold);
+  border-radius: 26px;
+
+  color: var(--maroon-dark);
+}
+
+.form-success-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 20px;
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  color: var(--maroon);
+
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+
+  letter-spacing: 0.08em;
+}
+
+.form-success h3 {
+  margin-bottom: 14px;
+
+  font-size: 2rem;
+
+  text-transform: uppercase;
+
+  color: var(--maroon);
+}
+
+.form-success-small {
+  margin-top: 14px;
+
+  font-weight: 600;
+  color: var(--gold);
+}
