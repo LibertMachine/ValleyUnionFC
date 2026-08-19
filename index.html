@@ -395,6 +395,42 @@
   </footer>
 
 <script>
+
+  /* ---------- MOBILE NAVIGATION ---------- */
+
+  const menuToggle = document.querySelector(".mobile-menu-toggle");
+  const mobileNav = document.getElementById("mobile-navigation");
+
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("is-open");
+
+      menuToggle.classList.toggle("is-open", isOpen);
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("is-open");
+        menuToggle.classList.remove("is-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+      });
+    });
+  }
+
+
+  /* ---------- FOUNDING LIST FORM ---------- */
+
   const foundingForm = document.getElementById("foundingForm");
   const formSuccess = document.getElementById("formSuccess");
   const submitButton = document.getElementById("submitButton");
@@ -402,7 +438,6 @@
   foundingForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    // Show that something is happening
     submitButton.disabled = true;
     submitButton.textContent = "Joining...";
 
@@ -418,20 +453,14 @@
       });
 
       if (response.ok) {
-
-        // Hide the form
         foundingForm.hidden = true;
-
-        // Show Valley Union confirmation
         formSuccess.hidden = false;
 
-        // Smoothly bring confirmation into view
         formSuccess.scrollIntoView({
           behavior: "smooth",
           block: "center"
         });
 
-        // Clear submitted information
         foundingForm.reset();
 
       } else {
@@ -452,6 +481,7 @@
       );
     }
   });
+
 </script>
 
 </body>
